@@ -58,9 +58,15 @@ requirements:
     - r-igraph >=0.9.0
 
 test:
+  requires:
+    - r-testthat
+  source_files:
+    - tests/
   commands:
-    - $R -e "library('leidenbase')"           # [not win]
-    - "\"%R%\" -e \"library('leidenbase')\""  # [win]
+    - $R -e "library('leidenbase')"                                                  # [not win]
+    - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"           # [not win]
+    - "\"%R%\" -e \"library('leidenbase')\""                                         # [win]
+    - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
 
 about:
   home: https://github.com/cole-trapnell-lab/leidenbase
