@@ -12,7 +12,7 @@ source:
   sha256: cd0a825fa44485e957847321c02b32ac5205675e56df00cd883ea50b9aab23e1
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -25,14 +25,10 @@ requirements:
   build:
     - cross-r-base {{ r_base }}        # [build_platform != target_platform]
     - r-igraph                         # [build_platform != target_platform]
-    - {{ compiler('c') }}              # [not win]
-    - {{ stdlib('c') }}                # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ stdlib('m2w64_c') }}          # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
-    - {{ compiler('fortran') }}        # [not win]
-    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ stdlib("c") }}
+    - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
+    - {{ compiler("fortran") }}
     - {{ posix }}filesystem            # [win]
     - {{ posix }}sed                   # [win]
     - {{ posix }}grep                  # [win]
