@@ -12,7 +12,7 @@ source:
   sha256: 22770b3d1f6a0e78a9de1adadd0aa6a4e2d8a47defaf75c83751885aeefdc490
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -39,7 +39,7 @@ requirements:
     - {{ posix }}autoconf
     - {{ posix }}automake              # [not win]
     - {{ posix }}automake-wrapper      # [win]
-    - pkg-config
+    - pkg-config                       # [not win]
     - {{ posix }}make
     - {{ posix }}coreutils             # [win]
     - {{ posix }}zip                   # [win]
@@ -47,7 +47,7 @@ requirements:
     - r-base
     - r-igraph >=0.9.0
     - glpk
-    - gmp  # [win]
+    - gmp                              # [win]
     - libblas
     - liblapack
     - liblzma-devel
@@ -63,9 +63,9 @@ test:
   source_files:
     - tests/
   commands:
-    - $R -e "library('leidenbase')"                                                  # [not win]
+    - $R -e "library('leidenbase')"                                                   # [not win]
     - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"           # [not win]
-    - "\"%R%\" -e \"library('leidenbase')\""                                         # [win]
+    - "\"%R%\" -e \"library('leidenbase')\""                                          # [win]
     - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
 
 about:
