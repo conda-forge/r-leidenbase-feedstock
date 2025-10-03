@@ -12,7 +12,7 @@ source:
   sha256: 22770b3d1f6a0e78a9de1adadd0aa6a4e2d8a47defaf75c83751885aeefdc490
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -51,7 +51,7 @@ requirements:
     - libblas
     - liblapack
     - liblzma-devel
-    - libxml2
+    - libxml2-devel
     - zlib
   run:
     - r-base
