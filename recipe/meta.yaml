@@ -1,4 +1,4 @@
-{% set version = "0.1.35" %}
+{% set version = "0.1.36" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/leidenbase_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/leidenbase/leidenbase_{{ version }}.tar.gz
-  sha256: 0339e1fa967b6decc222b0aaecd8190c5697458c2a7034b0348490cdfc9f807d
+  sha256: e53d949a26a5c6ffa7e4bc302b672516d35ba465611f6dd02e3ccdeda857b8a2
 
 build:
   number: 0
